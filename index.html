@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style/main.css">
+    <!-- Country codes JSON -->
+    <script defer type="text/javascript" src="data.js"></script>
+    <!-- Leaflet Hosted version -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+        integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+        crossorigin="" />
+    <script defer src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+        integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+        crossorigin=""></script>
+
+    <script defer src="main.js"></script>
+
+    <title>TravelMap</title>
+</head>
+
+<body>
+    <!-- https://flagpedia.net/download/api -->
+    <div class="backdrop backdrop__hidden"></div>
+    <div class="content">
+        <aside class="sidebar">
+            <div class="sidebar__logo">
+                <img src="img/logo.png" alt="Logo">
+            </div>
+            <ul class="countries">
+                <!-- <li class="country">
+                    <img src="https://flagcdn.com/w80/za.png" srcset="https://flagcdn.com/w160/za.png 2x" width="80"
+                        alt="South Africa">
+                </li> -->
+            </ul>
+            <div class="sidebar__arrow sidebar__arrow--rotate">
+                <p>&#10095;</p>
+            </div>
+            <div class="sidebar__mouse">
+                <div class="sidebar__mouse__body"></div>
+                <div class="sidebar__mouse--arrow1"></div>
+                <div class="sidebar__mouse--arrow2"></div>
+                <div class="sidebar__mouse--arrow3"></div>
+            </div>
+        </aside>
+        <section id="map"></section>
+
+    </div>
+
+    <div class="photo photo--hidden">
+        <!-- <div class="photo__container">
+            <img src="img/Palace of Culture and Science.jpg" alt="">
+
+            <div class="btn__container">
+                <img src="img/Palace of Culture and Science.jpg" alt="">
+
+                <button class="photo__btn">&#10005;</button>
+            </div>
+        </div> -->
+    </div>
+
+</body>
+
+</html>
