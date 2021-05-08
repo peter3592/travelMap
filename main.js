@@ -85,18 +85,29 @@ class App {
 
         photo.innerHTML = "";
         const placeName = e.target.options.alt;
+
+        let imgLoadedFlag1 = false;
+        let imgLoadedFlag2 = false;
+
         const html = `
         <div class="photo__container">
-            <img src="img/${placeName}.jpg" onload='console.log("loaded1")' alt="">
+            <img src="img/${placeName}.jpg" onload='imgLoadedFlag1=true' alt="">
             <div class="btn__container">
-                <img src="img/${placeName}.jpg" onload='console.log("loaded2")' alt="">
+                <img src="img/${placeName}.jpg" onload='imgLoadedFlag2=true' alt="">
                 <button class="photo__btn">&#10005;</button>
             </div>
         </div>`;
 
         photo.insertAdjacentHTML("afterbegin", html);
-        setTimeout(() => photo.classList.remove("photo--hidden"), 100);
-        //  photo.classList.remove("photo--hidden");
+
+        // Waiting until photo is loaded
+        const intervalID = setInterval(function () {
+            //
+            if (imgLoadedFlag1 && imgLoadedFlag2) {
+                photo.classList.remove("photo--hidden");
+                clearInterval(intervalID);
+            }
+        }, 50);
     }
 
     _closePhoto(e) {
