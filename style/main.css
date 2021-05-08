@@ -237,8 +237,20 @@ ul {
     border: none;
     border-radius: 0; }
   .country {
-    width: 7.69231rem;
-    height: 5.38462rem; }
+    width: 6.66667rem;
+    height: 4.66667rem; }
+  .sidebar {
+    min-width: 15rem; }
+    .sidebar__logo {
+      padding: 1rem 0; }
+      .sidebar__logo img {
+        width: 45%; }
+    .sidebar__mouse__body {
+      width: 2rem;
+      height: 3.8rem; }
+      .sidebar__mouse__body::after {
+        width: 0.4rem;
+        height: 0.7rem; }
   .citiesList__item {
     --listFontSize: 1.7rem;
     font-size: var(--listFontSize); }
