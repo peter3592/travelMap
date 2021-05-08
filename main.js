@@ -105,8 +105,6 @@ class App {
 
         // Waiting until photo is loaded
         const intervalID = setInterval(function () {
-            //
-            console.log("loading images ... ");
             if (imgLoadedFlag1 && imgLoadedFlag2) {
                 photo.classList.remove("photo--hidden");
                 clearInterval(intervalID);
