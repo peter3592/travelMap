@@ -6,6 +6,7 @@ const content = document.querySelector(".content");
 const photo = document.querySelector(".photo");
 const backdrop = document.querySelector(".backdrop");
 const sidebar = document.querySelector(".sidebar");
+const sidebarLogo = document.querySelector(".sidebar__logo");
 const sidebarArrow = sidebar.querySelector(".sidebar__arrow");
 const sidebarMouse = sidebar.querySelector(".sidebar__mouse");
 
@@ -40,6 +41,11 @@ class App {
             sidebarMouse.remove();
         });
         backdrop.addEventListener("click", this._closePhoto.bind(this));
+
+        this.animatedText(
+            document.querySelector(".sidebar__title"),
+            "Travel Map"
+        );
     }
 
     _loadMap() {
@@ -275,6 +281,23 @@ class App {
             this._countries.findIndex((con) => con._name === country),
             1
         );
+    }
+
+    animatedText(element, text) {
+        let index = 1;
+
+        const animationID = setInterval(function () {
+            if (text[index] === " ") {
+                index++;
+            }
+            element.innerHTML = text.slice(0, index);
+            index++;
+            if (index - 1 === text.length) {
+                sidebarLogo.classList.remove("sidebar__logo--hidden");
+                clearInterval(animationID);
+                return;
+            }
+        }, 150);
     }
 }
 

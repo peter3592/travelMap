@@ -98,9 +98,18 @@ body {
         animation: mouseDown 1s infinite; }
   .sidebar__logo {
     text-align: center;
-    padding: 2rem 0; }
+    padding: 2rem 0 0.5rem;
+    opacity: 1;
+    transition: all 1s; }
     .sidebar__logo img {
-      width: 65%; }
+      width: 45%; }
+    .sidebar__logo--hidden {
+      transform: translateX(-80px) translateY(30px);
+      opacity: 0; }
+  .sidebar__title {
+    font-family: "Great Vibes", cursive;
+    color: #2e00c0;
+    font-size: 5rem; }
 
 #map {
   height: 100%;
