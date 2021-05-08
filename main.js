@@ -85,15 +85,11 @@ class App {
 
         photo.innerHTML = "";
         const placeName = e.target.options.alt;
-        /*  const html = `
-            <img src="img/${placeName}.jpg" alt="">
-            <button class="photo__btn">&#10005;</button>
-        `;*/
         const html = `
         <div class="photo__container">
-            <img src="img/${placeName}.jpg" alt="">
+            <img src="img/${placeName}.jpg" onload='console.log("loaded1")' alt="">
             <div class="btn__container">
-                <img src="img/${placeName}.jpg" alt="">
+                <img src="img/${placeName}.jpg" onload='console.log("loaded2")' alt="">
                 <button class="photo__btn">&#10005;</button>
             </div>
         </div>`;
