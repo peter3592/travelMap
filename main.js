@@ -7,6 +7,7 @@ const photo = document.querySelector(".photo");
 const backdrop = document.querySelector(".backdrop");
 const sidebar = document.querySelector(".sidebar");
 const sidebarLogo = document.querySelector(".sidebar__logo");
+const sidebarTitle = document.querySelector(".sidebar__title");
 const sidebarArrow = sidebar.querySelector(".sidebar__arrow");
 const sidebarMouse = sidebar.querySelector(".sidebar__mouse");
 
@@ -25,10 +26,10 @@ class App {
         iconUrl: "img/camera-icon.png",
         // shadowUrl: "leaf-shadow.png",
 
-        iconSize: [20, 20], // size of the icon
+        iconSize: [22, 22], // size of the icon
         //  shadowSize: [50, 64], // size of the shadow
         iconAnchor: [10, 10], // point of the icon which will correspond to marker's location
-        //   shadowAnchor: [4, 62], // the same for the shadow
+        //  shadowAnchor: [4, 62], // the same for the shadow
         popupAnchor: [-3, -30], // point from which the popup should open relative to the iconAnchor
     });
 
@@ -42,10 +43,14 @@ class App {
         });
         backdrop.addEventListener("click", this._closePhoto.bind(this));
 
-        this.animatedText(
+        setTimeout(
+            this.animatedText.bind(null, sidebarTitle, "Travel Map"),
+            100
+        );
+        /* this.animatedText(
             document.querySelector(".sidebar__title"),
             "Travel Map"
-        );
+        );*/
     }
 
     _loadMap() {
@@ -69,7 +74,6 @@ class App {
     _addPlaces(country) {
         for (const place of country._places) {
             this._addMarker(place);
-            //  this._addPhotos(place);
         }
     }
 
@@ -297,7 +301,7 @@ class App {
                 clearInterval(animationID);
                 return;
             }
-        }, 150);
+        }, 180);
     }
 }
 
@@ -364,6 +368,7 @@ class Place {
 }
 
 // IIFE
+
 (function () {
     const app = new App();
 
