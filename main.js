@@ -9,6 +9,9 @@ const sidebar = document.querySelector(".sidebar");
 const sidebarArrow = sidebar.querySelector(".sidebar__arrow");
 const sidebarMouse = sidebar.querySelector(".sidebar__mouse");
 
+let imgLoadedFlag1 = false;
+let imgLoadedFlag2 = false;
+
 class App {
     _myMap;
     _countries = [];
@@ -86,8 +89,8 @@ class App {
         photo.innerHTML = "";
         const placeName = e.target.options.alt;
 
-        let imgLoadedFlag1 = false;
-        let imgLoadedFlag2 = false;
+        imgLoadedFlag1 = false;
+        imgLoadedFlag2 = false;
 
         const html = `
         <div class="photo__container">
@@ -103,11 +106,12 @@ class App {
         // Waiting until photo is loaded
         const intervalID = setInterval(function () {
             //
+            console.log("loading images ... ");
             if (imgLoadedFlag1 && imgLoadedFlag2) {
                 photo.classList.remove("photo--hidden");
                 clearInterval(intervalID);
             }
-        }, 50);
+        }, 100);
     }
 
     _closePhoto(e) {
