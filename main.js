@@ -38,9 +38,18 @@ class App {
         countriesList.addEventListener("click", this._sidebarClick.bind(this));
         photo.addEventListener("click", this._closePhoto.bind(this));
         sidebarArrow.addEventListener("click", this._sidebarShowHide);
-        sidebar.addEventListener("wheel", () => {
+        // Mouse Wheel
+        sidebar.addEventListener("wheel", (e) => {
+            // Scrolling Down
+            if (e.deltaY > 0) {
+                sidebarMouse.remove();
+            }
+        });
+        // Touch move
+        sidebar.addEventListener("touchmove ", () => {
             sidebarMouse.remove();
         });
+
         backdrop.addEventListener("click", this._closePhoto.bind(this));
 
         setTimeout(
@@ -330,7 +339,7 @@ class Country {
         const flagHTML = `
         <li class="country" data-country='${this._name}'>
             <img class="country__flag" src="https://flagcdn.com/w80/${countryCode}.png" srcset="https://flagcdn.com/w160/${countryCode}.png 2x" width="80"
-                alt="${this._name}">
+                alt="${this._name}" draggable="false">
          </li>`;
         if (!this._cities) return flagHTML;
 
@@ -470,6 +479,9 @@ class Place {
     );
 
     countryItaly.addPlace(new Place("Milan Cathedral", [45.464138, 9.1917677]));
+    countryItaly.addPlace(
+        new Place("Sforzesco Castle", [45.470424, 9.1791394])
+    );
 
     countryItaly.addPlace(new Place("Tower of Pisa", [43.7229452, 10.3966224]));
 
@@ -533,8 +545,11 @@ class Place {
     // -------------------
     // --- Switzerland ---
     // -------------------
+    const countrySwitzerland = new Country("Switzerland", [46.004, 8.944], 12);
 
-    app.addCountry(new Country("Switzerland", [46.002, 8.949], 11));
+    countrySwitzerland.addPlace(new Place("Lugano", [46.00562835, 8.94764338]));
+
+    app.addCountry(countrySwitzerland);
 
     // ----------------------------
     // --- United Arab Emirates ---
@@ -583,13 +598,13 @@ class Place {
     // --------------
     // --- Turkey ---
     // --------------
-
+    /*
     const countryTurkey = new Country("Turkey", [38.698, 35.158], 10, {
         Kayseri: { coords: [38.722, 35.485], zoomLevel: 12 },
         Cappadocia: { coords: [38.648, 34.843], zoomLevel: 12 },
     });
 
-    app.addCountry(countryTurkey);
+    app.addCountry(countryTurkey);*/
 
     // -----------------
     // --- Sri Lanka ---
