@@ -27,10 +27,30 @@ body {
   height: 100%;
   background-color: rgba(0, 0, 0, 0.5);
   z-index: 9;
-  position: absolute; }
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center; }
   .backdrop__hidden {
-    width: 0;
-    height: 0; }
+    display: none; }
+  .backdrop__dots {
+    display: flex; }
+    .backdrop__dots__hidden {
+      display: none; }
+  .backdrop__dot {
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50%;
+    background-color: #42f742;
+    border: 3px solid #29830d; }
+    .backdrop__dot--1 {
+      animation: loadingDot 0.5s infinite; }
+    .backdrop__dot--2 {
+      animation: loadingDot 1s infinite; }
+    .backdrop__dot--3 {
+      animation: loadingDot 1.5s infinite; }
+  .backdrop__dot:not(:last-of-type) {
+    margin-right: 2rem; }
 
 .content {
   width: 90%;
@@ -211,6 +231,13 @@ ul {
   font-size: 1.8rem;
   border: 3px solid #258f05; }
 
+@keyframes loadingDot {
+  from,
+  to {
+    transform: translateY(0rem); }
+  50% {
+    transform: translateY(-3rem); } }
+
 @keyframes mouseDown {
   from {
     transform: translateX(-50%) translateY(0);
@@ -294,22 +321,31 @@ ul {
     height: 100%;
     border: none;
     border-radius: 0; }
-  .sidebar__mouse {
-    position: absolute;
-    top: 50%;
-    left: 13%; }
-    .sidebar__mouse__body {
-      width: 5rem;
-      height: 5rem;
-      border-radius: 0;
-      border: 0px solid transparent;
-      background-image: url(../img/finger.png);
-      background-size: cover;
-      animation: fingerUp 1s infinite; }
-      .sidebar__mouse__body::after {
-        content: "";
-        width: 0rem;
-        height: 0rem; } }
+  /*
+    .sidebar {
+        &__mouse {
+            position: absolute;
+            top: 50%;
+            left: 13%;
+            //       transform: translateY(-50%);
+            &__body {
+                width: 5rem;
+                height: 5rem;
+                border-radius: 0;
+                border: 0px solid transparent;
+                //  position: relative;
+                background-image: url(../img/finger.png);
+                background-size: cover;
+                animation: fingerUp 1s infinite;
+
+                &::after {
+                    content: "";
+                    width: 0rem;
+                    height: 0rem;
+                }
+            }
+        }
+    }*/ }
 
 @media only screen and (max-height: 400px) {
   .country {

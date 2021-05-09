@@ -5,6 +5,7 @@ const countriesList = document.querySelector(".countries");
 const content = document.querySelector(".content");
 const photo = document.querySelector(".photo");
 const backdrop = document.querySelector(".backdrop");
+const backdropDots = document.querySelector(".backdrop__dots");
 const sidebar = document.querySelector(".sidebar");
 const sidebarLogo = document.querySelector(".sidebar__logo");
 const sidebarTitle = document.querySelector(".sidebar__title");
@@ -45,10 +46,10 @@ class App {
                 sidebarMouse.remove();
             }
         });
-        // Touch move
+        /* // Touch move
         sidebar.addEventListener("touchmove ", () => {
             sidebarMouse.remove();
-        });
+        });*/
 
         backdrop.addEventListener("click", this._closePhoto.bind(this));
 
@@ -104,6 +105,7 @@ class App {
 
     _openPhoto(e) {
         backdrop.classList.remove("backdrop__hidden");
+        backdropDots.classList.remove("backdrop__dots__hidden");
 
         photo.innerHTML = "";
         const placeName = e.target.options.alt;
@@ -125,6 +127,7 @@ class App {
         // Waiting until photo is loaded
         const intervalID = setInterval(function () {
             if (imgLoadedFlag1 && imgLoadedFlag2) {
+                backdropDots.classList.add("backdrop__dots__hidden");
                 photo.classList.remove("photo--hidden");
                 clearInterval(intervalID);
             }
@@ -142,6 +145,7 @@ class App {
         //  photo.innerHTML = "";
         backdrop.classList.add("backdrop__hidden");
         photo.classList.add("photo--hidden");
+
         //  console.log(e);
     }
 
