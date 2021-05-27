@@ -174,33 +174,24 @@ class App {
 
             // Show cities list of clicked country, if country has one
             if (countryClicked._cities) {
-                // Check if clicked country has already open list
-                /*   if (
-                    this._activeList &&
-                    this._activeList.parentElement.previousElementSibling
-                        .dataset.country === countryClicked._name
-                ) {
-                     this._activeList.style.maxHeight = "0";
-                       this._activeList = null;
-                    return;
-                }*/
-
                 // Check if some other country has open list
                 if (this._activeList) {
+                    // Hide others country cities list
                     this._activeList.style.maxHeight = "0";
                 }
 
                 // Add list to clicked country
                 // Calculate dynamic height of list container (due to CSS heigth transition)
+
                 // Get number of cities
                 const numOfCities = Object.keys(countryClicked._cities).length;
                 // Get fontsize of list item from CSS
                 const listItemFontSize = window
                     .getComputedStyle(document.documentElement)
                     .getPropertyValue("--listFontSize");
-                // Calcutale and set new height
+                // Calculate and set dynamic height of list
                 const newMaxHeight =
-                    Number.parseFloat(listItemFontSize) * numOfCities * 1.3;
+                    Number.parseFloat(listItemFontSize) * numOfCities * 1.35;
                 this._activeList =
                     target.parentElement.nextElementSibling.firstChild;
                 this._activeList.style.maxHeight = `${newMaxHeight}rem`;
@@ -228,39 +219,6 @@ class App {
                 duration: 2,
             });
         }
-    }
-
-    _showCitiesList(country) {
-        const flagElement = document.querySelector(
-            `[data-country="${country._name}"]`
-        );
-        const nextElement = flagElement.nextElementSibling;
-        if (nextElement.classList.contains("citiesList")) {
-            // Country cities list already exits, delete it
-            nextElement.remove();
-            return;
-        }
-
-        let listHTML =
-            "<li class='citiesList'><div class = 'citiesList__container citiesList__container--hidden'><ul>";
-        for (const city of Object.keys(country._cities)) {
-            listHTML += `<li class='citiesList__item'>${city}</li>`;
-        }
-        listHTML += "</ul></div></li>";
-        console.log(listHTML);
-        flagElement.insertAdjacentHTML("afterend", listHTML);
-
-        console.log(flagElement.nextElementSibling);
-
-        console.log(
-            flagElement
-                .closest(".country")
-                .nextElementSibling.querySelector(".citiesList__container")
-        );
-        flagElement
-            .closest(".country")
-            .nextElementSibling.querySelector(".citiesList__container")
-            .classList.remove("citiesList__container--hidden");
     }
 
     _sidebarShowHide() {
@@ -381,7 +339,6 @@ class Place {
 }
 
 // IIFE
-
 (function () {
     const app = new App();
 
