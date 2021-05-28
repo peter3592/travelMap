@@ -147,7 +147,8 @@ ul {
   height: 80%;
   margin: 0 auto;
   overflow-y: scroll;
-  transition: all 1s; }
+  transition: all 1s;
+  scrollbar-width: none; }
 
 .countries::-webkit-scrollbar {
   width: 0; }
