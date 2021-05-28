@@ -324,8 +324,8 @@ ul {
 
 @media (hover: none), (max-height: 500px) {
   .content {
-    width: 10%;
-    height: 10%;
+    width: 100%;
+    height: 100%;
     border: none;
     border-radius: 0; }
   .country {
