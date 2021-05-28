@@ -129,8 +129,9 @@ body {
     font-family: "Great Vibes", cursive;
     text-align: center;
     color: #2e00c0;
-    font-size: 4.3rem;
-    margin-bottom: 2rem; }
+    font-size: 4.5rem;
+    margin-bottom: 2rem;
+    transition: all 1s; }
 
 #map {
   height: 100%;
@@ -145,7 +146,8 @@ ul {
   width: 70%;
   height: 80%;
   margin: 0 auto;
-  overflow-y: scroll; }
+  overflow-y: scroll;
+  transition: all 1s; }
 
 .countries::-webkit-scrollbar {
   width: 0; }
@@ -187,8 +189,12 @@ ul {
     height: 3.5rem;
     width: 3.5rem;
     font-size: 2.25rem;
+    line-height: 3.5rem;
     cursor: pointer;
-    transition: all 0.2s; }
+    transition: all 0.2s;
+    display: flex;
+    justify-content: center;
+    align-items: center; }
     .photo__btn:hover {
       background: rgba(255, 255, 255, 0.9);
       color: rgba(41, 131, 13, 0.5); }

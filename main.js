@@ -206,8 +206,9 @@ class App {
         // City from list was clicked
         if (target.classList.contains("citiesList__item")) {
             const city = target.textContent;
-            const countryName = target.closest(".citiesList")
-                .previousElementSibling.dataset.country;
+            const countryName =
+                target.closest(".citiesList").previousElementSibling.dataset
+                    .country;
             const countryObject = this._countries.find(
                 (country) => country._name === countryName
             );
@@ -225,6 +226,9 @@ class App {
         //
         sidebarArrow.classList.toggle("sidebar__arrow--rotate");
         sidebar.classList.toggle("sidebar--hidden");
+        sidebarTitle.classList.toggle("sidebar--hidden");
+        sidebarLogo.classList.toggle("sidebar--hidden");
+        countriesList.classList.toggle("sidebar--hidden");
     }
 
     // Public methods
