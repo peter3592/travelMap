@@ -329,9 +329,9 @@ ul {
     border: none;
     border-radius: 0; }
   .country {
-    width: 5.55556rem;
-    height: 3.88889rem;
-    margin-bottom: 1.8rem; }
+    width: 4.7619rem;
+    height: 3.33333rem;
+    margin-bottom: 1.7rem; }
   .citiesList__item {
     --listFontSize: 1.7rem;
     font-size: var(--listFontSize); }
@@ -358,4 +358,5 @@ ul {
         font-size: 2.5rem;
         line-height: 2.5rem; }
     .sidebar__title {
-      font-size: 2.1rem; } }
+      font-size: 2.1rem;
+      margin-bottom: 1.2rem; } }
