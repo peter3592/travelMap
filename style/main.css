@@ -3,7 +3,7 @@ $sidebar-color1: rgba(34, 31, 199, 0.7);
 $sidebar-color2: rgba(58, 255, 229, 0.548);*/
 :root {
   --listFontSize: 2rem;
-  --listFontSize-smaller: 1rem; }
+  --listFontSize-smaller: 1.25rem; }
 
 * {
   box-sizing: border-box;
