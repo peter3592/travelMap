@@ -355,6 +355,11 @@ ul {
     }*/ }
 
 @media only screen and (max-height: 400px) {
+  .content {
+    width: 100%;
+    height: 100%;
+    border: none;
+    border-radius: 0; }
   .country {
     width: 5.88235rem;
     height: 4.11765rem;
