@@ -345,7 +345,7 @@ ul {
     .sidebar__logo {
       padding: 1rem 0; }
       .sidebar__logo img {
-        width: 45%; }
+        width: 35%; }
     .sidebar__mouse__body {
       width: 2rem;
       height: 3.8rem; }
@@ -355,7 +355,7 @@ ul {
     .sidebar__arrow {
       right: 2%; }
       .sidebar__arrow p {
-        font-size: 3.5rem;
-        line-height: 3.5rem; }
+        font-size: 2.5rem;
+        line-height: 2.5rem; }
     .sidebar__title {
-      font-size: 2.6rem; } }
+      font-size: 1.7rem; } }
