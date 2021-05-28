@@ -324,8 +324,8 @@ ul {
 
 @media (hover: none), (max-height: 500px) {
   .content {
-    width: 100%;
-    height: 100%;
+    width: 10%;
+    height: 10%;
     border: none;
     border-radius: 0; }
   .country {
@@ -345,7 +345,7 @@ ul {
     .sidebar__logo {
       padding: 1rem 0; }
       .sidebar__logo img {
-        width: 35%; }
+        width: 40%; }
     .sidebar__mouse__body {
       width: 2rem;
       height: 3.8rem; }
@@ -358,4 +358,4 @@ ul {
         font-size: 2.5rem;
         line-height: 2.5rem; }
     .sidebar__title {
-      font-size: 1.7rem; } }
+      font-size: 2.1rem; } }
