@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="style/main.css">
 
     <!-- Flavicon -->
-    <link rel="shortcut icon" type="image/jpg" href="img/logo.png" />
+    <link rel="shortcut icon" type="image/jpg" href="img/icons/logo.png" />
 
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
@@ -28,7 +28,7 @@
         integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
         crossorigin=""></script>
 
-    <script defer src="main.js"></script>
+    <script src="main.js" type="module"></script>
 
     <title>TravelMap</title>
 </head>
@@ -47,7 +47,7 @@
     <div class="content">
         <aside class="sidebar">
             <div class="sidebar__logo sidebar__logo--hidden">
-                <img src="img/logo.png" alt="Logo" draggable="false">
+                <img src="img/icons/logo.png" alt="Logo" draggable="false">
             </div>
             <div class="sidebar__title">&#12644;</div>
             <ul class="countries">
@@ -69,6 +69,19 @@
             </div>
         </aside>
         <section id="map"></section>
+
+        <div class="weather__icon">
+            <span class="weather__tooltip">Get current <br> weather on map</span>
+        </div>
+
+        <aside class="weather__data weather__data--hidden">
+            <div class="weather__data__icon weather__data__icon--therm"></div>
+            <p class="weather__data__therm">20 °C</p>
+            <div class="weather__data__icon weather__data__icon--wind"></div>
+            <p class="weather__data__wind">14 km/h</p>
+            <div class="weather__data__icon weather__data__icon--humidity"></div>
+            <p class="weather__data__humidity">60 %</p>
+        </aside>
 
     </div>
 

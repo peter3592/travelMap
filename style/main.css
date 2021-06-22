@@ -139,6 +139,78 @@ body {
   background-color: #97f797;
   z-index: 0; }
 
+.map__weather {
+  cursor: url("../img/icons/sun.png"), pointer !important; }
+
+.weather__icon {
+  position: absolute;
+  top: 5%;
+  right: 5%;
+  padding: 1rem;
+  width: 5rem;
+  height: 5rem;
+  cursor: pointer;
+  padding: 1rem;
+  background-image: url("../img/icons/weather.png");
+  background-size: cover;
+  transition: 0.2s all;
+  filter: grayscale(1); }
+  .weather__icon:hover {
+    filter: grayscale(0.5); }
+    .weather__icon:hover .weather__tooltip {
+      visibility: visible;
+      opacity: 1; }
+  .weather__icon--active {
+    filter: grayscale(0) !important; }
+
+.weather__data {
+  background-color: rgba(44, 122, 21, 0.7);
+  background-image: linear-gradient(to right, rgba(41, 131, 13, 0.5), rgba(66, 247, 66, 0.65), rgba(41, 131, 13, 0.5));
+  height: 60%;
+  width: 15%;
+  min-width: 10rem;
+  position: absolute;
+  top: 20%;
+  right: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  font-weight: bold;
+  border-top-left-radius: 5rem;
+  border-bottom-left-radius: 5rem;
+  transition: all 0.3s ease-in; }
+  .weather__data--hidden {
+    transform: translateX(100%); }
+  .weather__data__icon {
+    height: 5rem;
+    width: 5rem;
+    background-size: cover;
+    margin: 2.2rem auto 0.5rem; }
+    .weather__data__icon--therm {
+      background-image: url("../img/icons/thermometer.png"); }
+    .weather__data__icon--wind {
+      background-image: url("../img/icons/wind.png"); }
+    .weather__data__icon--humidity {
+      background-image: url("../img/icons/humidity.png"); }
+
+.weather__tooltip {
+  visibility: hidden;
+  width: 12rem;
+  background-color: #29830d;
+  color: #fff;
+  text-align: center;
+  padding: 5px 0;
+  border-radius: 6px;
+  font-size: 1.2rem;
+  position: absolute;
+  top: 120%;
+  left: 50%;
+  margin-left: -6rem;
+  opacity: 0;
+  transition: opacity 0.3s; }
+
 ul {
   list-style: none; }
 
